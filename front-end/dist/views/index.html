@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Partial Templating</title>
+	<title>Sanger Portal Sign In</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="../assets/css/styles.css?v=1500374231528">
+<link rel="stylesheet" href="../assets/css/styles.css?v=1500389411933">
 
 	
 	
 </head>
 
-<body>
+<body class="sign">
 	<header class="site-header" role="banner">
 		<div class="skip-links">
 			<a href="#navigation" class="skip">Skip to navigation</a>
@@ -29,8 +29,22 @@
 
 	<div class="main" id="main" role="main">
 		
-   <h1 class="text-center">Sanger Aker Mock Up Piece</h1>
-   <a href="" class="btn btn-success">Success</a>
+
+   <section style="display: flex; justify-content:center; align-items:center; height: 90vh; flex-direction:column;">
+      <img src="http://placehold.it/120" style="display:block; margin-bottom:40px;" alt="">
+      <h1 style="text-transform: none">Sanger Aker Portal thing</h1>
+      <form action="" style="width:30%; margin-top:50px;">
+         <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+         </div>
+         <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+         </div>
+         <button type="submit" class="btn btn-primary btn-lg" style="float:right; margin-top:30px;">Sign in</button>
+      </form>
+   </section>
 
 	</div>
 
@@ -40,6 +54,7 @@
    <p>&copy; Copyright &verbar; All Rights Reserved</p>
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="../assets/js/common.min.js"></script>
 <script src="../assets/js/main.min.js" defer></script>
