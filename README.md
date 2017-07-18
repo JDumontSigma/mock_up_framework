@@ -1,14 +1,4 @@
-# Base Build for Node Applications
+# Mock up piece for a workshop
 
-> Provides front end development functionality within the front-end folder
-> Server functionality seen by running gulp server from within front-end
-
-## Set up
-
-Clone the repo into an area of your choice and cd into the folder
-Move into front-end
-
-> npm install
-
-for developing interfaces and UI
-> gulp dev
+> A quick prototype which utilises html technology to allow complete interaction and manipulation
+> The aim of being better than a preplanned prototype such as axure

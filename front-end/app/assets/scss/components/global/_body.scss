@@ -4,3 +4,12 @@ body{
 .skip-links{
    display: none;
 }
+footer{
+   position: fixed;
+   text-align: right;
+   border: 0;
+   left: 0;
+   width: calc(100vw - 2em);
+   top:calc(100vh - 4em);
+   margin-right: 2em;
+}
