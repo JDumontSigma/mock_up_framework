@@ -8,7 +8,7 @@
    <section style="display: flex; justify-content:center; align-items:center; height: 90vh; flex-direction:column;">
       <img src="http://placehold.it/120" style="display:block; margin-bottom:40px;" alt="">
       <h1 style="text-transform: none">Sanger Aker Portal thing</h1>
-      <form action="" style="width:30%; margin-top:50px;">
+      <form action="#" id="loginForm" style="width:30%; margin-top:50px;" onsubmit="return false">
          <div class="form-group">
             <label for="username">Username</label>
             <input type="text" class="form-control" id="username" placeholder="Username" name="username">
@@ -17,7 +17,7 @@
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" placeholder="Password" name="password">
          </div>
-         <button type="submit" class="btn btn-primary btn-lg" style="float:right; margin-top:30px;">Sign in</button>
+         <button type="submit" name="Submit" value="submit" class="btn btn-primary btn-lg loginSubmit" style="float:right; margin-top:30px;">Sign in</button>
       </form>
    </section>
 {% endblock %}
@@ -26,4 +26,29 @@
 <footer>
    <p>&copy; Copyright &verbar; All Rights Reserved</p>
 </footer>
+{% endblock %}
+
+{% block customScripts %}
+<script type="text/javascript">
+Cookies.set('test', {'1': {
+                           'name': 'Random Code herhe',
+                           'date': '24/01/1029',
+                           'status': 'Active',
+                           'code': 'usdiasdiuas'
+                          },
+                     '2': {
+                        'name': 'Another code here',
+                        'date': '24/21/1029',
+                        'status': 'Inactive',
+                        'code': 'asdhasdh'
+                       },
+                     '3': {
+                           'name': 'asdgagd isigas',
+                           'date': '4/21/1029',
+                           'status': 'Waiting',
+                           'code': 'ajhsagsdsg'
+                          },
+                     'studyCount': 3
+                     });
+</script>
 {% endblock %}

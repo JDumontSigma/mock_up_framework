@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js" lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Dashboard</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="../assets/css/styles.css?v=1500449109567">
+
+	
+	
+</head>
+
+<body class="">
+	<header class="site-header" role="banner">
+		<div class="skip-links">
+			<a href="#navigation" class="skip">Skip to navigation</a>
+			<a href="#main" class="skip">Skip to main content</a>
+			<a href="#footer" class="skip">Skip to footer</a>
+		</div>
+
+		
+
+   <nav class="nav-primary">
+      <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" alt="">
+      <h1>Sanger Aker thing</h1>
+      <ul>
+         <li><a href="">Account</a></li>
+         <li><a href="./index.html">Logout</a></li>
+      </ul>
+   </nav>
+
+
+
+	</header>
+
+	<div class="main" id="main" role="main">
+		
+<div class="container">
+   <h3 class="name" style="text-transform: capitalize;"></h3>
+
+   <section class="studiesContainer">
+      <div class="col-sm-12" style="padding:2.5em 4em; box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.24); margin-top:60px;">
+         <button class="btn btn-lg btn-primary" style="float:right" data-toggle="modal" data-target="#myModal">Add Study</button>
+      <section class="studies" style="display:flex; width:100%; margin-top:80px;">
+
+         
+         
+      </section>
+      
+      </div>
+   </section>
+</div>
+
+
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create a new study</h4>
+        </div>
+        <div class="modal-body">
+          <p>To make a new study please choose whether to import the data or create a new study all together</p>
+          <a href="./prelim.html?phase=import"class="btn btn-lg btn-default">Import Data from File</a>
+          <a href="./prelim.html?phase=new" class="btn btn-lg btn-primary">Manual Enter</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+   
+
+	</div>
+
+
+
+<footer>
+   <p>&copy; Copyright &verbar; All Rights Reserved</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../assets/js/common.min.js"></script>
+<script src="../assets/js/main.min.js" defer></script>
+
+
+<script type="text/javascript">
+var name = Cookies.get('username');
+$('.name').html('Welcome Back ' + name);
+</script>
+
+<script type="text/javascript">
+var tests = Cookies.getJSON('test');
+var testDetails = '';
+for(var test in tests) {
+  if(test !== 'studyCount') {
+   testDetails += '<a href="./study.html?id=' + test + '&name=' + tests[test].name + '&code=' + tests[test].code + '&date=' + tests[test].date + '&status=' + tests[test].status + '">';
+            testDetails += '<section class="studyItem">';
+               testDetails += '<h4>' + tests[test].name + '</h4>'
+               testDetails += '<section class="studyInfo">';
+                  testDetails += '<div class="date">' + tests[test].date + '</div>';
+                  testDetails += '<div class="code">' + tests[test].code + '</div>';
+                  switch(String(tests[test].status).toLowerCase()) {
+                    case 'active' :
+                      testDetails += '<div class="state btn btn-success btn-xs">' + tests[test].status + '</div>';
+                    break;
+                    case 'inactive' :
+                      testDetails += '<div class="state btn btn-default btn-xs">' + tests[test].status + '</div>';
+                    break;
+                    case 'waiting' :
+                      testDetails += '<div class="state btn btn-warning btn-xs">' + tests[test].status + '</div>';
+                    break; 
+                  }
+                  
+               testDetails += '</section>';
+            testDetails += '</section>';
+         testDetails += '</a>';
+}
+}
+$('.studies').append(testDetails);
+
+</script>
+
+
+</body>
+</html>

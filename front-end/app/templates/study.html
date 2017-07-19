@@ -1,0 +1,110 @@
+{% extends 'partials/layout.html' %}
+{% block title %}Study Screen{% endblock %}
+{% block nav %}
+
+   <nav class="nav-primary">
+      <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" alt="">
+      <h1>Sanger Aker thing</h1>
+      <ul>
+         <li><a href="">Account</a></li>
+         <li><a href="./index.html">Logout</a></li>
+      </ul>
+   </nav>
+
+{% endblock %}
+
+{% block content %}
+<div class="container">
+   <section class="testdetails">
+      <p class="id" style="display:none"></p>
+      <div class="col-sm-6">
+         <p>Title: <span id="testTitle" contenteditable></span></p>
+         <p>Cost code: <span id="testCost" contenteditable></span></p>
+      </div>
+      <div class="col-sm-6">
+         <p>Status: 
+            <span id="testStatus">
+               <select name="" id="stateChoice">
+                  <option value="active">Active</option>
+                  <option value="waiting">Waiting</option>
+                  <option value="inactive">Inactive</option>
+               </select>
+            </span>
+         </p>
+         <p>Date: <span id="testDate" contenteditable></span></p>
+      </div>
+      
+      
+   </section>
+</div>
+   
+   
+{% endblock %}
+
+{% block footer %}
+<footer>
+   <p>&copy; Copyright &verbar; All Rights Reserved</p>
+</footer>
+{% endblock %}
+
+{% block customScripts %}
+<script type="text/javascript">
+var name = Cookies.get('username');
+$('.name').html('Welcome Back ' + name);
+</script>
+
+<script type="text/javascript">
+function parseURLParams( url ) {
+    var queryStart = url.indexOf("?") + 1,
+        queryEnd   = url.indexOf("#") + 1 || url.length + 1,
+        query = url.slice(queryStart, queryEnd - 1),
+        pairs = query.replace(/\+/g, " ").split("&"),
+        parms = {}, i, n, v, nv;
+
+    if (query === url || query === "") return;
+
+    for (i = 0; i < pairs.length; i++) {
+        nv = pairs[i].split("=", 2);
+        n = decodeURIComponent(nv[0]);
+        v = decodeURIComponent(nv[1]);
+
+        if (!parms.hasOwnProperty(n)) parms[n] = [];
+        parms[n].push(nv.length === 2 ? v : null);
+    }
+    return parms;
+}
+
+let url = window.location.href;
+
+let breakdown = parseURLParams( url );
+
+$('.id').html( breakdown.id );
+$('#testTitle').html( breakdown.name );
+$('#testCost').html( breakdown.code );
+$('#stateChoice').val( String(breakdown.status).toLowerCase() );
+$('#testDate').html( breakdown.date );
+
+
+$('#testTitle, #testCost, #testStatus, #testDate').keyup( function () {
+   Set_Data();
+});
+
+$('#stateChoice').change(function () {
+   Set_Data();
+});
+function Set_Data () {
+      var info = Cookies.getJSON('test');
+      console.log(info);
+      info[ breakdown.id ] = {
+         'name': $('#testTitle').html(),
+         'date': $('#testDate').html(),
+         'status': $('#stateChoice').val(),
+         'code': $('#testCost').html()
+      }
+      console.log(info[breakdown.id]);
+      Cookies.set('test', info);
+}
+</script>
+{% endblock %}
+
+

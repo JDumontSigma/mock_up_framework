@@ -6,9 +6,11 @@ header{
       padding: 2em 4em;
       margin-left: -3rem;
       margin-top: -3rem;
+      z-index: 999;
       -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.24);
       -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.24);
       box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.24);
+      background-color: white;
       img{
          height: 50px;
          background-color: blue;

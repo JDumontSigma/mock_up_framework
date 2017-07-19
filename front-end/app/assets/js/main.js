@@ -13,6 +13,10 @@ $('.table_holder').append( detail );
 function Table_Generator () {
     let rowCount = 10,
        columnCount = 5;
+        detail += '<button class="sort btn btn-primary" data-sort="id">Sort by id</button>';
+        detail += '<button class="sort btn btn-primary" data-sort="name">Sort by name</button>'
+        detail += '<button class="sort btn btn-primary" data-sort="gender">Sort by gender</button>'
+        detail += '<button class="sort btn btn-primary" data-sort="sequence">Sort by sequence</button>'
     detail += '<table class="table table-striped">';
     detail += '<thead>';
         detail += '<tr>';
@@ -22,7 +26,7 @@ function Table_Generator () {
         detail += '</tr>';
     detail += '</thead>';
 
-    detail += '<tbody>';
+    detail += '<tbody class="list">';
    for( let i = 0; i < rowCount; i++ ) {
       detail += '<tr>';
          for( let x = 0; x < columnTitle.length; x++ ) {
@@ -84,7 +88,11 @@ $('body').on('click', '#searchRecords', function ( event ) {
     $('.searchHolder').append('<p>Results for all records in column ' + column + ' with the value ' + query);
 });
 
+var options = {
+  valueNames: [ 'id', 'name', 'gender', 'test', 'sequence' ]
+};
 
+var tableList = new List('user', options);
 // $( document ).on('mousedown', '.item', function () {
 //    let column = $( this ).attr('id'),
 //        colVal = $( this ).html();
@@ -105,3 +113,6 @@ $('body').on('click', '#searchRecords', function ( event ) {
 //       });
 //    });
 //
+
+
+const login = require('./seperate/loginform');

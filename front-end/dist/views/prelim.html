@@ -1,0 +1,176 @@
+<!doctype html>
+<html class="no-js" lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Preliminary Information</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="../assets/css/styles.css?v=1500449109567">
+
+	
+	
+</head>
+
+<body class="">
+	<header class="site-header" role="banner">
+		<div class="skip-links">
+			<a href="#navigation" class="skip">Skip to navigation</a>
+			<a href="#main" class="skip">Skip to main content</a>
+			<a href="#footer" class="skip">Skip to footer</a>
+		</div>
+
+		
+
+   <nav class="nav-primary">
+      <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" alt="">
+      <h1>Sanger Aker thing</h1>
+      <ul>
+         <li><a href="">Account</a></li>
+         <li><a href="./index.html">Logout</a></li>
+      </ul>
+   </nav>
+
+
+
+	</header>
+
+	<div class="main" id="main" role="main">
+		
+<div class="container">
+   <section class="well well-lg">
+      <h2>Prelim Information</h2>
+      <div class="col-sm-12">
+         <h3 class="normaliseTitle">Project id</h3>
+         <p class="lg-text testId">2</p>
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Project Title</h3>
+         <input class="lg-text form-control reset" id="projectTitle" value="Project tile in here" contenteditable />
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Project Code</h3>
+         <input class="lg-text form-control  reset" id="projectCode" value="78823823923" contenteditable />
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Project Start Date</h3>
+         <input class="lg-text form-control reset" id="projectDate" value="24/01/2017" contenteditable />
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Project Status</h3>
+         <input class="lg-text form-control reset" id="projectState" value="Active" contenteditable />
+      </div>
+   </section>
+
+   <section class="well well-lg">
+      <h2>Contact Details</h2>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Project Owner</h3>
+         <p class="lg-text"><a class="resetHTML" href="mailto:random@gmail.com" contenteditable>random@gmail.com</a></p>
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Project Manager</h3>
+         <p class="lg-text "><a class="resetHTML" href="mailto:random@gmail.com" contenteditable>random@gmail.com</a></p>
+      </div>
+   </section>
+
+   <section class="well well-lg">
+      <h2>Project Setup</h2>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Project Title (Sequencescape)</h3>
+         <input class="lg-text form-control reset" value="Nice Title Here" />
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Project Cost Code</h3>
+         <input class="lg-text form-control reset" value="asAIGaigaid819812" />
+      </div>
+   </section>
+
+   <button class="btn btn-lg btn-primary saveNewProject">Save Project</button>
+   <button class="btn btn-lg btn-default">Continue Project</button>
+   
+</div>
+
+
+
+   
+
+	</div>
+
+
+
+<footer>
+   <p>&copy; Copyright &verbar; All Rights Reserved</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../assets/js/common.min.js"></script>
+<script src="../assets/js/main.min.js" defer></script>
+
+
+
+<script type="text/javascript">
+
+function parseURLParams( url ) {
+    var queryStart = url.indexOf("?") + 1,
+        queryEnd   = url.indexOf("#") + 1 || url.length + 1,
+        query = url.slice(queryStart, queryEnd - 1),
+        pairs = query.replace(/\+/g, " ").split("&"),
+        parms = {}, i, n, v, nv;
+
+    if (query === url || query === "") return;
+
+    for (i = 0; i < pairs.length; i++) {
+        nv = pairs[i].split("=", 2);
+        n = decodeURIComponent(nv[0]);
+        v = decodeURIComponent(nv[1]);
+
+        if (!parms.hasOwnProperty(n)) parms[n] = [];
+        parms[n].push(nv.length === 2 ? v : null);
+    }
+    return parms;
+}
+
+let url = window.location.href;
+
+let breakdown = parseURLParams( url );
+
+var idCount = Cookies.getJSON('test'),
+       testIdDisplay = idCount.studyCount + 1;
+       $('.testId').html(testIdDisplay);
+
+if( String(breakdown.phase) === 'new' ) {
+   $('.reset').each(function () {
+      $( this ).val('');
+   });
+   $('.resetHTML').each(function () {
+      $( this ).addClass('form-control');
+      $( this ).html(' '); 
+   });
+} 
+
+
+$('.saveNewProject').on('click', function () {
+   var tests = Cookies.getJSON('test'),
+       testId = tests.studyCount + 1;
+
+   tests[testId] = {
+      'name': $('#projectTitle').val(),
+      'date': $('#projectDate').val(),
+      'status': $('#projectState').val(),
+      'code': $('#projectCode').val()
+   }
+   tests.studyCount = testId;
+   Cookies.set('test', tests);
+   window.location = './home.html';
+   
+});
+</script>
+
+
+</body>
+</html>

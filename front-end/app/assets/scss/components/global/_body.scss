@@ -29,3 +29,10 @@ footer{
 .active{
    background-color: green !important;
 }
+td {
+   &:focus{
+      background-color: blue !important;
+      color: white;
+      font-weight: bold;
+   }
+}

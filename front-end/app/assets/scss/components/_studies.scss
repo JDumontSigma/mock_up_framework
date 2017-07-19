@@ -1,0 +1,112 @@
+.studyItem{
+   padding: 2em 3.5em;
+   -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.24);
+   -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.24);
+   box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.24);
+   width: 100%;
+   flex-direction: row;
+   display: flex;
+   
+   h4{
+      flex: 2;
+   }
+}
+.studyInfo{
+   display: flex;
+   flex-direction: row;
+   flex: 2;
+   align-items: center;
+   .date,.code,.state{
+      font-size: 1.2em;
+      width: 33%;
+      text-align: center;
+   
+   }
+}
+.studiesContainer{
+   flex-direction: column;
+}
+.studies{
+   flex-direction: column;
+   a{
+      transition: 0.3s;
+      margin-bottom: 30px;
+      &:hover,&focus,&:active{
+         text-decoration: none;
+         cursor: pointer;
+         -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
+         -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
+         box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
+         transition: 0.3s;
+      }
+   }
+}
+.modal-body{
+   text-align: center;
+   button{
+      width: 40%;
+      margin-bottom: 20px;
+      font-size: 1.2em;
+      &:first-of-type{
+         margin-right: 3%;
+      }
+   }
+   p{
+      text-align: left;
+      font-size: 1.3em;
+      padding: 2em;
+   }
+}
+.modal-content{
+   padding: 2em;
+   width: 60%;
+   margin-left: 20%;
+}
+.modal-title{
+   text-transform: none;
+}
+.modal-dialog{
+   width:100% !important;
+}
+
+
+.testdetails{
+   p{
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 70px;
+      display: block;
+      width: 100%;
+
+      span{
+         display: block;
+         font-size: 1.2em;
+         font-weight: normal;
+         @extend .form-control;
+         margin-top: 20px;
+         select{
+            width: 100%;
+         }
+      }
+   }
+}
+.normaliseTitle{
+   text-transform: capitalize;
+   font-size: 2.5rem;
+   font-weight: bold;
+}
+.lg-text{
+   font-size: 2rem;
+   margin-top: 15px;
+   margin-bottom: 30px;
+}
+.well{
+   display: inline-block;
+   width: 100%;
+   h2{
+      margin-bottom: 30px;
+   }
+}
+.resetHTML{
+   display: block;
+}
