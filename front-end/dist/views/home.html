@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="../assets/css/styles.css?v=1500466267199">
+<link rel="stylesheet" href="../assets/css/styles.css?v=1500473084985">
 
 	
 	
@@ -27,7 +27,7 @@
       <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" alt="">
       <h1>Sanger Aker thing</h1>
       <ul>
-         <li><a href="">Account</a></li>
+         <li><a href="./account.html">Account</a></li>
          <li><a href="./index.html">Logout</a></li>
       </ul>
    </nav>
@@ -40,11 +40,17 @@
 		
 <div class="container">
    <h3 class="name" style="text-transform: capitalize;"></h3>
-
+    <p style="font-size:1.8rem; margin-top:20px;">Please find the latest test below. You are able to create new test, edit previous tests from this page</p>
    <section class="studiesContainer">
       <div class="col-sm-12" style="padding:2.5em 4em; box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.24); margin-top:60px;">
          <button class="btn btn-lg btn-primary" style="float:right" data-toggle="modal" data-target="#myModal">Add Study</button>
-      <section class="studies" style="display:flex; width:100%; margin-top:80px;">
+      <section class="studies_heading" style="display:flex; width:100%; margin-top:60px;">
+        <h4 style="flex:3;">Project title</h4>
+        <h4 style="flex:1;text-align:center;">Start Date</h4>
+        <h4 style="flex:1;text-align:center;">Project Code</h4>
+        <h4 style="flex:1;text-align:center;">State</h4>
+      </section>
+      <section class="studies" style="display:flex; width:100%; margin-top:20px;">
 
          
          
@@ -89,6 +95,9 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 	<script src="../assets/js/common.min.js"></script>
 <script src="../assets/js/main.min.js" defer></script>
 

@@ -6,15 +6,16 @@
 {% block content %}
 
    <section style="display: flex; justify-content:center; align-items:center; height: 90vh; flex-direction:column;">
-      <img src="http://placehold.it/120" style="display:block; margin-bottom:40px;" alt="">
+      <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" style="display:block; margin-bottom:40px; width:300px;" alt="">
       <h1 style="text-transform: none">Sanger Aker Portal thing</h1>
       <form action="#" id="loginForm" style="width:30%; margin-top:50px;" onsubmit="return false">
+        <p style="font-size:1.8rem;">Please log in using your details for any Aker product</p>
          <div class="form-group">
-            <label for="username">Username</label>
+            <label for="username">Please enter your username</label>
             <input type="text" class="form-control" id="username" placeholder="Username" name="username">
          </div>
          <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">Please enter your password</label>
             <input type="password" class="form-control" id="password" placeholder="Password" name="password">
          </div>
          <button type="submit" name="Submit" value="submit" class="btn btn-primary btn-lg loginSubmit" style="float:right; margin-top:30px;">Sign in</button>

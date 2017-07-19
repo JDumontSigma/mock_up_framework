@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="../assets/css/styles.css?v=1500466267199">
+<link rel="stylesheet" href="../assets/css/styles.css?v=1500473084985">
 
 	
 	
@@ -27,7 +27,7 @@
       <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" alt="">
       <h1>Sanger Aker thing</h1>
       <ul>
-         <li><a href="">Account</a></li>
+         <li><a href="./account.html">Account</a></li>
          <li><a href="./index.html">Logout</a></li>
       </ul>
    </nav>
@@ -39,6 +39,7 @@
 	<div class="main" id="main" role="main">
 		
 <div class="container">
+    <h2 style="margin-bottom:40px;">Editing: <span id="editTitle" style="font-weight:bold;">Test tile here</span></h2>
    <section class="testdetails">
       <p class="id" style="display:none"></p>
       <div class="col-sm-6">
@@ -50,15 +51,15 @@
             <span id="testStatus">
                <select name="" id="stateChoice">
                   <option value="active">Active</option>
-                  <option value="waiting">Waiting</option>
                   <option value="inactive">Inactive</option>
                </select>
             </span>
          </p>
-         <p>Date: <span id="testDate" contenteditable></span></p>
+         <p>Date: <span><input type="date" id="testDate" class="form-control"></span></p>
       </div>
       
-      
+      <a href="./home.html" class="btn btn-lg btn-primary" style="float:right">Back</a>
+      <div href="" class="btn btn-lg btn-success saveBtn" style="background-color:transparent;box-shadow:none;color:#0d87e9; float:right;"></div>
    </section>
 </div>
    
@@ -76,6 +77,9 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 	<script src="../assets/js/common.min.js"></script>
 <script src="../assets/js/main.min.js" defer></script>
 
@@ -111,30 +115,42 @@ let url = window.location.href;
 let breakdown = parseURLParams( url );
 
 $('.id').html( breakdown.id );
+$('#editTitle').html( breakdown.name );
 $('#testTitle').html( breakdown.name );
 $('#testCost').html( breakdown.code );
 $('#stateChoice').val( String(breakdown.status).toLowerCase() );
-$('#testDate').html( breakdown.date );
+$('#testDate').val( breakdown.date );
 
 
 $('#testTitle, #testCost, #testStatus, #testDate').keyup( function () {
    Set_Data();
+   Save_Anim();
 });
 
-$('#stateChoice').change(function () {
+$('#stateChoice, #testDate').change(function () {
    Set_Data();
+   Save_Anim();
 });
 function Set_Data () {
       var info = Cookies.getJSON('test');
       console.log(info);
       info[ breakdown.id ] = {
          'name': $('#testTitle').html(),
-         'date': $('#testDate').html(),
+         'date': $('#testDate').val(),
          'status': $('#stateChoice').val(),
          'code': $('#testCost').html()
       }
       console.log(info[breakdown.id]);
       Cookies.set('test', info);
+}
+
+function Save_Anim () {
+    $('.saveBtn').html('Saving...');
+    var time = Math.floor(Math.random() * 2000);
+        console.log(time);
+    setTimeout(function () {
+        $('.saveBtn').html('Changes saved');  
+    }, time);
 }
 </script>
 

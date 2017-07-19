@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="../assets/css/styles.css?v=1500466267199">
+<link rel="stylesheet" href="../assets/css/styles.css?v=1500473084985">
 
 	
 	
@@ -27,7 +27,7 @@
       <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" alt="">
       <h1>Sanger Aker thing</h1>
       <ul>
-         <li><a href="">Account</a></li>
+         <li><a href="./account.html">Account</a></li>
          <li><a href="./index.html">Logout</a></li>
       </ul>
    </nav>
@@ -39,7 +39,8 @@
 	<div class="main" id="main" role="main">
 		
 <div class="container">
-   <section class="well well-lg">
+    <h2 style="margin-bottom:50px;">New project setup</h2>
+   <section class="well well-lg" style="position:relative;">
       <h2>Prelim Information</h2>
       <div class="col-sm-12">
          <h3 class="normaliseTitle">Project id</h3>
@@ -47,35 +48,31 @@
       </div>
       <div class="col-sm-6">
          <h3 class="normaliseTitle">Project Title</h3>
-         <input class="lg-text form-control reset" id="projectTitle" value="Project tile in here" contenteditable />
-      </div>
-      <div class="col-sm-6">
-         <h3 class="normaliseTitle">Project Code</h3>
-         <input class="lg-text form-control  reset" id="projectCode" value="78823823923" contenteditable />
+         <input class="lg-text form-control reset" id="projectTitle" value="Project tile in here" contenteditable="false" />
       </div>
       <div class="col-sm-6">
          <h3 class="normaliseTitle">Project Start Date</h3>
-         <input class="lg-text form-control reset" id="projectDate" value="24/01/2017" contenteditable />
+         <input class="lg-text form-control reset" id="projectDate" type="date" value="2017-01-24"/>
       </div>
       <div class="col-sm-6">
          <h3 class="normaliseTitle">Project Status</h3>
-         <input class="lg-text form-control reset" id="projectState" value="Active" contenteditable />
+         <input class="lg-text form-control reset" id="projectState" value="Active" contenteditable="false" />
       </div>
    </section>
 
-   <section class="well well-lg">
+   <section class="well well-lg" style="position:relative;">
       <h2>Contact Details</h2>
       <div class="col-sm-6">
          <h3 class="normaliseTitle">Project Owner</h3>
-         <p class="lg-text"><a class="resetHTML" href="mailto:random@gmail.com" contenteditable>random@gmail.com</a></p>
+         <p class="lg-text"><a class="resetHTML" href="mailto:random@gmail.com" contenteditable="false">random@gmail.com</a></p>
       </div>
       <div class="col-sm-6">
          <h3 class="normaliseTitle">Project Manager</h3>
-         <p class="lg-text "><a class="resetHTML" href="mailto:random@gmail.com" contenteditable>random@gmail.com</a></p>
+         <p class="lg-text "><a class="resetHTML" href="mailto:random@gmail.com" contenteditable="false">random@gmail.com</a></p>
       </div>
    </section>
 
-   <section class="well well-lg">
+   <section class="well well-lg" style="position:relative;">
       <h2>Project Setup</h2>
       <div class="col-sm-6">
          <h3 class="normaliseTitle">Project Title (Sequencescape)</h3>
@@ -83,7 +80,71 @@
       </div>
       <div class="col-sm-6">
          <h3 class="normaliseTitle">Project Cost Code</h3>
-         <input class="lg-text form-control reset" value="asAIGaigaid819812" />
+         <input class="lg-text form-control reset" id="projectCode" value="asAIGaigaid819812" />
+      </div>
+   </section>
+
+   <section class="well well-lg" style="position:relative;">
+      <h2>Study Setup</h2>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Study Name*</h3>
+         <input class="lg-text form-control reset" value="Study name here" />
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Study Owner*</h3>
+         <input class="lg-text form-control reset" id="projectCode" value="Study owner in here" />
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Reference genome</h3>
+        <select name="" id="stateChoice" class="form-control lg-text">
+                  <option value="active">Active</option>
+                  <option value="inactive">Inactive</option>
+        </select>
+        <div class="checkbox" style="margin-left:0px;">
+            <input type="checkbox" style="margin-left:0px;"> Not suitable for alignment
+            <button style="color:black;margin-left:50px;" type="button" class="btn btn-secondary popoverInfo" data-container="checkbox" data-toggle="popover" data-placement="right" data-content="Reference genomes can be used to automatically align sequence data once run is complete. Additional reference sequence can be submitted if requireed at:">
+             info
+            </button>
+        </div>
+        
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Faculty Sponsor</h3>
+         <input class="lg-text form-control reset" id="projectCode" value="Emter tje sfaculty sponsor for the project" />
+      </div>
+        <div class="col-sm-6">
+         <h3 class="normaliseTitle">Study type</h3>
+         <select name="" id="stateChoice" class="form-control lg-text">
+                  <option value="active">List</option>
+                  <option value="inactive">Here</option>
+        </select>
+      </div>
+        <div class="col-sm-12">
+         <h3 class="normaliseTitle">Title (to be seen in ENA/EGA)</h3>
+         <input class="lg-text form-control reset" id="projectCode" value="Click here to enter title of study as would be used in publication" />
+      </div>
+        <div class="col-sm-12">
+         <h3 class="normaliseTitle">Study Description</h3>
+         <textarea name="" id="" class="form-control lg-text"></textarea>
+      </div>
+      <div class="col-sm-12">
+         <h3 class="normaliseTitle">Study Abstract</h3>
+         <textarea name="" id="" class="form-control lg-text"></textarea>
+      </div>
+
+      <div class="col-sm-12">
+          <div class="checkbox">
+            <input type="checkbox" id="humanCheck" style="margin-left:0px;">Do the samples contain human DNA?
+          </div>
+        <div class="checkbox hmdc" style="display:none;">
+            <input type="checkbox" id="hmdc" style="margin-left:0px;">Do you have HMDMC Approval?
+        </div>
+        <div class="col-sm-12">
+            <h3 class="normaliseTitle hmdcNumber" style="display:none;">Please enter the HMDC number</h3>
+            <input type="text" class="form-control hmdcNumber lg-text" placeholder="Enter your HMDC number" style="display:none;">
+        </div>
+          
+          
       </div>
    </section>
 
@@ -91,7 +152,6 @@
    <button class="btn btn-lg btn-default">Continue Project</button>
    
 </div>
-
 
 
    
@@ -108,13 +168,29 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 	<script src="../assets/js/common.min.js"></script>
 <script src="../assets/js/main.min.js" defer></script>
 
 
 
 <script type="text/javascript">
+$(function() {
+    $('#toggle-two').bootstrapToggle({
+      on: 'Enabled',
+      off: 'Disabled'
+    });
+  });
 
+$('body').on('click', '#humanCheck', function() {
+    $('.hmdc').toggle('hidden'); 
+});
+
+$('body').on('click', '#hmdc', function() {
+    $('.hmdcNumber').toggle('hidden'); 
+});
 function parseURLParams( url ) {
     var queryStart = url.indexOf("?") + 1,
         queryEnd   = url.indexOf("#") + 1 || url.length + 1,
@@ -154,6 +230,7 @@ if( String(breakdown.phase) === 'new' ) {
 } 
 
 
+
 $('.saveNewProject').on('click', function () {
    var tests = Cookies.getJSON('test'),
        testId = tests.studyCount + 1;
@@ -169,6 +246,11 @@ $('.saveNewProject').on('click', function () {
    window.location = './home.html';
    
 });
+$(function () {
+  $('.popoverInfo').popover({
+    container: 'body'
+  })
+})
 </script>
 
 

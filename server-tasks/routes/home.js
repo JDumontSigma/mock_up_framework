@@ -15,6 +15,9 @@ home.get('/home.html', (req, res) => {
 home.get('/prelim.html', (req, res) => {
       res.render('prelim');
 });
+home.get('./account.html', (req, res) => {
+      res.render('account');
+});
 home.get('/study.html', (req, res) => {
       res.render('study');
 });

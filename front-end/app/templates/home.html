@@ -6,7 +6,7 @@
       <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" alt="">
       <h1>Sanger Aker thing</h1>
       <ul>
-         <li><a href="">Account</a></li>
+         <li><a href="./account.html">Account</a></li>
          <li><a href="./index.html">Logout</a></li>
       </ul>
    </nav>
@@ -16,11 +16,17 @@
 {% block content %}
 <div class="container">
    <h3 class="name" style="text-transform: capitalize;"></h3>
-
+    <p style="font-size:1.8rem; margin-top:20px;">Please find the latest test below. You are able to create new test, edit previous tests from this page</p>
    <section class="studiesContainer">
       <div class="col-sm-12" style="padding:2.5em 4em; box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.24); margin-top:60px;">
          <button class="btn btn-lg btn-primary" style="float:right" data-toggle="modal" data-target="#myModal">Add Study</button>
-      <section class="studies" style="display:flex; width:100%; margin-top:80px;">
+      <section class="studies_heading" style="display:flex; width:100%; margin-top:60px;">
+        <h4 style="flex:3;">Project title</h4>
+        <h4 style="flex:1;text-align:center;">Start Date</h4>
+        <h4 style="flex:1;text-align:center;">Project Code</h4>
+        <h4 style="flex:1;text-align:center;">State</h4>
+      </section>
+      <section class="studies" style="display:flex; width:100%; margin-top:20px;">
 
          
          

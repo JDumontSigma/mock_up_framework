@@ -1,11 +1,12 @@
 {% extends 'partials/layout.html' %}
-{% block title %}base template{% endblock %}
+{% block title %}Preliminary Information{% endblock %}
 {% block nav %}
 
    <nav class="nav-primary">
       <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" alt="">
-      <h1>Sanger Aker thing</h1>
-      <h2 class="name"></h2>
+      <a href="./index.html">
+         <h1>Sanger Aker thing</h1>
+      </a>
       <ul>
          <li><a href="./account.html">Account</a></li>
          <li><a href="./index.html">Logout</a></li>
@@ -15,7 +16,12 @@
 {% endblock %}
 
 {% block content %}
+<div class="container">
+   <h2>Account Settings</h2>
+   <p style="margin-top:20px;">Some interesting facts such a permission roles, password reset, profile pic etc.</p>
+</div>
 
+   
 {% endblock %}
 
 {% block footer %}
@@ -25,8 +31,7 @@
 {% endblock %}
 
 {% block customScripts %}
+
 <script type="text/javascript">
-var name = Cookies.get('username');
-$('.name').html('welcome back ' + name);
 </script>
 {% endblock %}

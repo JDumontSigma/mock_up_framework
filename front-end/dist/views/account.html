@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>{% block title %}Evauation Framework{% endblock %}</title>
+	<title>Preliminary Information</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="../assets/css/styles.css?v={{timestamp}}">
+<link rel="stylesheet" href="../assets/css/styles.css?v=1500473084985">
 
-	{% block head %}
-	{% endblock %}
+	
+	
 </head>
 
-<body class="{% block bodyClass %}{% endblock %}">
+<body class="">
 	<header class="site-header" role="banner">
 		<div class="skip-links">
 			<a href="#navigation" class="skip">Skip to navigation</a>
@@ -21,20 +21,40 @@
 			<a href="#footer" class="skip">Skip to footer</a>
 		</div>
 
-		{% block nav %}
 		
-		{% endblock %}
+
+   <nav class="nav-primary">
+      <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" alt="">
+      <a href="./index.html">
+         <h1>Sanger Aker thing</h1>
+      </a>
+      <ul>
+         <li><a href="./account.html">Account</a></li>
+         <li><a href="./index.html">Logout</a></li>
+      </ul>
+   </nav>
+
+
 
 	</header>
 
 	<div class="main" id="main" role="main">
-		{% block content %}
-		{% endblock %}
+		
+<div class="container">
+   <h2>Account Settings</h2>
+   <p style="margin-top:20px;">Some interesting facts such a permission roles, password reset, profile pic etc.</p>
+</div>
+
+   
+
 	</div>
 
 
-{% block footer %}
-{% endblock %}
+
+<footer>
+   <p>&copy; Copyright &verbar; All Rights Reserved</p>
+</footer>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
@@ -45,9 +65,11 @@
 	<script src="../assets/js/common.min.js"></script>
 <script src="../assets/js/main.min.js" defer></script>
 
-{% block customScripts %}
 
-{% endblock %}
+
+<script type="text/javascript">
+</script>
+
 
 </body>
 </html>
