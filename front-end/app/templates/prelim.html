@@ -1,21 +1,18 @@
 {% extends 'partials/layout.html' %}
 {% block title %}Preliminary Information{% endblock %}
 {% block nav %}
-
-   <nav class="nav-primary">
-      <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" alt="">
-      <h1>Sanger Aker thing</h1>
-      <ul>
-         <li><a href="./account.html">Account</a></li>
-         <li><a href="./index.html">Logout</a></li>
-      </ul>
-   </nav>
-
+<nav class="nav-primary">
+   <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" alt="">
+   <h1>Sanger Aker thing</h1>
+   <ul>
+      <li><a href="./account.html">Account</a></li>
+      <li><a href="./index.html">Logout</a></li>
+   </ul>
+</nav>
 {% endblock %}
-
 {% block content %}
 <div class="container">
-    <h2 style="margin-bottom:50px;">New project setup</h2>
+   <h2 style="margin-bottom:50px;">New project setup</h2>
    <section class="well well-lg" style="position:relative;">
       <h2>Prelim Information</h2>
       <div class="col-sm-12">
@@ -35,7 +32,6 @@
          <input class="lg-text form-control reset" id="projectState" value="Active" contenteditable="false" />
       </div>
    </section>
-
    <section class="well well-lg" style="position:relative;">
       <h2>Contact Details</h2>
       <div class="col-sm-6">
@@ -47,7 +43,6 @@
          <p class="lg-text "><a class="resetHTML" href="mailto:random@gmail.com" contenteditable="false">random@gmail.com</a></p>
       </div>
    </section>
-
    <section class="well well-lg" style="position:relative;">
       <h2>Project Setup</h2>
       <div class="col-sm-6">
@@ -59,7 +54,6 @@
          <input class="lg-text form-control reset" id="projectCode" value="asAIGaigaid819812" />
       </div>
    </section>
-
    <section class="well well-lg" style="position:relative;">
       <h2>Study Setup</h2>
       <div class="col-sm-6">
@@ -72,34 +66,37 @@
       </div>
       <div class="col-sm-6">
          <h3 class="normaliseTitle">Reference genome</h3>
-        <select name="" id="stateChoice" class="form-control lg-text">
-                  <option value="active">Active</option>
-                  <option value="inactive">Inactive</option>
-        </select>
-        <div class="checkbox" style="margin-left:0px;">
+         <select name="" id="stateChoice" class="form-control lg-text">
+            <option value="active">Reference 1</option>
+            <option value="inactive">Reference 2</option>
+            <option value="inactive">Reference 3</option>
+            <option value="inactive">Reference 4</option>
+            <option value="inactive">Reference 5</option>
+         </select>
+         <div class="checkbox" style="margin-left:0px; font-size:2rem;">
             <input type="checkbox" style="margin-left:0px;"> Not suitable for alignment
             <button style="color:black;margin-left:50px;" type="button" class="btn btn-secondary popoverInfo" data-container="checkbox" data-toggle="popover" data-placement="right" data-content="Reference genomes can be used to automatically align sequence data once run is complete. Additional reference sequence can be submitted if requireed at:">
-             info
+            info
             </button>
-        </div>
-        
+         </div>
       </div>
       <div class="col-sm-6">
          <h3 class="normaliseTitle">Faculty Sponsor</h3>
          <input class="lg-text form-control reset" id="projectCode" value="Emter tje sfaculty sponsor for the project" />
       </div>
-        <div class="col-sm-6">
+      <div class="col-sm-6">
          <h3 class="normaliseTitle">Study type</h3>
          <select name="" id="stateChoice" class="form-control lg-text">
-                  <option value="active">List</option>
-                  <option value="inactive">Here</option>
-        </select>
+            <option value="active">Genetic</option>
+            <option value="inactive">Cancer Genomics</option>
+            <option value="inactive">Forensic</option>
+         </select>
       </div>
-        <div class="col-sm-12">
+      <div class="col-sm-12">
          <h3 class="normaliseTitle">Title (to be seen in ENA/EGA)</h3>
          <input class="lg-text form-control reset" id="projectCode" value="Click here to enter title of study as would be used in publication" />
       </div>
-        <div class="col-sm-12">
+      <div class="col-sm-12">
          <h3 class="normaliseTitle">Study Description</h3>
          <textarea name="" id="" class="form-control lg-text"></textarea>
       </div>
@@ -107,114 +104,174 @@
          <h3 class="normaliseTitle">Study Abstract</h3>
          <textarea name="" id="" class="form-control lg-text"></textarea>
       </div>
-
       <div class="col-sm-12">
-          <div class="checkbox">
+         <div class="checkbox" style="font-size:2rem;">
             <input type="checkbox" id="humanCheck" style="margin-left:0px;">Do the samples contain human DNA?
-          </div>
-        <div class="checkbox hmdc" style="display:none;">
+         </div>
+         <div class="checkbox hmdc" style="display:none; font-size:2rem;">
             <input type="checkbox" id="hmdc" style="margin-left:0px;">Do you have HMDMC Approval?
-        </div>
-        <div class="col-sm-12">
+         </div>
+         <div class="col-sm-12">
             <h3 class="normaliseTitle hmdcNumber" style="display:none;">Please enter the HMDC number</h3>
             <input type="text" class="form-control hmdcNumber lg-text" placeholder="Enter your HMDC number" style="display:none;">
-        </div>
-          
-          
+         </div>
       </div>
    </section>
-
+   <section class="well well-lg" style="position:relative;">
+      <h2>Tell us about the samples</h2>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Total number of samples to be submitted</h3>
+         <input type"number" class="lg-text form-control reset" id="projectTitle" placeholder="Sample number" />
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Sample Source</h3>
+         <input type"number" class="lg-text form-control reset" id="projectTitle" placeholder="cell pellet" />
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Harvard Classification type</h3>
+         <select name="" id="harvardClassification" class="form-control lg-text">
+            <option value="hg1">HG1</option>
+            <option value="hg2">HG2</option>
+         </select>
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Extraction type</h3>
+         <select name="" id="stateChoice" class="form-control lg-text">
+            <option value="dna">DNA</option>
+            <option value="dnarna">DNA/RNA</option>
+            <option value="rna">RNA</option>
+         </select>
+      </div>
+      <div class="col-sm-12">
+         <h3 class="normaliseTitle">Please provide any further useful information about the samples supploied</h3>
+         <textarea name="" id="" class="form-control lg-text" placeholder="Click here to provide any further useful information about your smaples"></textarea>
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Are the samples precious?</h3>
+         <select name="" id="stateChoice" class="form-control lg-text">
+            <option value="active">yes</option>
+            <option value="inactive">No</option>
+         </select>
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Is there a date when the data is required</h3>
+         <input type="date" class="form-control lg-text">
+      </div>
+      <div class="col-sm-6">
+         <h3 class="normaliseTitle">Please indicate the priority of you project</h3>
+         <select name="" id="priority" class="form-control lg-text">
+            <option value="standard">Standard</option>
+            <option value="med">Medium</option>
+            <option value="high">High</option>
+         </select>
+      </div>
+      <div class="col-sm-6" id="testing" style="display:none">
+         <h3 class="normaliseTitle">Please choose a reason from the list</h3>
+         <select name="" id="priorityReason" class="form-control lg-text">
+            <option value="none">Please Select a reason</option>
+            <option value="fin">Financial Deadline</option>
+            <option value="pub">Publication Deadline</option>
+            <option value="phd">PhD Deadline</option>
+            <option value="project">Project Milestone Dealine</option>
+         </select>
+      </div>
+      <div class="col-sm-12">
+         <h3 class="normaliseTitle">Additional comments regarding your samples/project requirements</h3>
+         <textarea name="" id="" class="form-control lg-text" placeholder="Click here to provide any further useful information about your smaples"></textarea>
+      </div>
+   </section>
    <button class="btn btn-lg btn-primary saveNewProject">Save Project</button>
    <button class="btn btn-lg btn-default">Continue Project</button>
-   
 </div>
-
-
-   
 {% endblock %}
-
 {% block footer %}
 <footer>
    <p>&copy; Copyright &verbar; All Rights Reserved</p>
 </footer>
 {% endblock %}
-
 {% block customScripts %}
-
 <script type="text/javascript">
-$(function() {
-    $('#toggle-two').bootstrapToggle({
-      on: 'Enabled',
-      off: 'Disabled'
-    });
-  });
-
-$('body').on('click', '#humanCheck', function() {
-    $('.hmdc').toggle('hidden'); 
-});
-
-$('body').on('click', '#hmdc', function() {
-    $('.hmdcNumber').toggle('hidden'); 
-});
-function parseURLParams( url ) {
-    var queryStart = url.indexOf("?") + 1,
-        queryEnd   = url.indexOf("#") + 1 || url.length + 1,
-        query = url.slice(queryStart, queryEnd - 1),
-        pairs = query.replace(/\+/g, " ").split("&"),
-        parms = {}, i, n, v, nv;
-
-    if (query === url || query === "") return;
-
-    for (i = 0; i < pairs.length; i++) {
-        nv = pairs[i].split("=", 2);
-        n = decodeURIComponent(nv[0]);
-        v = decodeURIComponent(nv[1]);
-
-        if (!parms.hasOwnProperty(n)) parms[n] = [];
-        parms[n].push(nv.length === 2 ? v : null);
-    }
-    return parms;
-}
-
-let url = window.location.href;
-
-let breakdown = parseURLParams( url );
-
-var idCount = Cookies.getJSON('test'),
-       testIdDisplay = idCount.studyCount + 1;
-       $('.testId').html(testIdDisplay);
-
-if( String(breakdown.phase) === 'new' ) {
-   $('.reset').each(function () {
-      $( this ).val('');
-   });
-   $('.resetHTML').each(function () {
-      $( this ).addClass('form-control');
-      $( this ).html(' '); 
-   });
-} 
-
-
-
-$('.saveNewProject').on('click', function () {
-   var tests = Cookies.getJSON('test'),
-       testId = tests.studyCount + 1;
-
-   tests[testId] = {
-      'name': $('#projectTitle').val(),
-      'date': $('#projectDate').val(),
-      'status': $('#projectState').val(),
-      'code': $('#projectCode').val()
-   }
-   tests.studyCount = testId;
-   Cookies.set('test', tests);
-   window.location = './home.html';
+   $(function() {
+       $('#toggle-two').bootstrapToggle({
+         on: 'Enabled',
+         off: 'Disabled'
+       });
+     });
    
-});
-$(function () {
-  $('.popoverInfo').popover({
-    container: 'body'
-  })
-})
+   
+     $('#priority').on('change', function () {
+       if( $('#priority').val() === 'high' ) {
+           $('#testing').show();
+       } else {
+           $('#testing').hide();
+       }
+     });
+   $('body').on('click', '#humanCheck', function() {
+       $('.hmdc').toggle('hidden'); 
+   });
+   
+   $('body').on('click', '#hmdc', function() {
+       $('.hmdcNumber').toggle('hidden'); 
+   });
+   function parseURLParams( url ) {
+       var queryStart = url.indexOf("?") + 1,
+           queryEnd   = url.indexOf("#") + 1 || url.length + 1,
+           query = url.slice(queryStart, queryEnd - 1),
+           pairs = query.replace(/\+/g, " ").split("&"),
+           parms = {}, i, n, v, nv;
+   
+       if (query === url || query === "") return;
+   
+       for (i = 0; i < pairs.length; i++) {
+           nv = pairs[i].split("=", 2);
+           n = decodeURIComponent(nv[0]);
+           v = decodeURIComponent(nv[1]);
+   
+           if (!parms.hasOwnProperty(n)) parms[n] = [];
+           parms[n].push(nv.length === 2 ? v : null);
+       }
+       return parms;
+   }
+   
+   let url = window.location.href;
+   
+   let breakdown = parseURLParams( url );
+   
+   var idCount = Cookies.getJSON('test'),
+          testIdDisplay = idCount.studyCount + 1;
+          $('.testId').html(testIdDisplay);
+   
+   if( String(breakdown.phase) === 'new' ) {
+      $('.reset').each(function () {
+         $( this ).val('');
+      });
+      $('.resetHTML').each(function () {
+         $( this ).addClass('form-control');
+         $( this ).html(' '); 
+      });
+   } 
+   
+   
+   
+   $('.saveNewProject').on('click', function () {
+      var tests = Cookies.getJSON('test'),
+          testId = tests.studyCount + 1;
+   
+      tests[testId] = {
+         'name': $('#projectTitle').val(),
+         'date': $('#projectDate').val(),
+         'status': $('#projectState').val(),
+         'code': $('#projectCode').val()
+      }
+      tests.studyCount = testId;
+      Cookies.set('test', tests);
+      window.location = './home.html';
+      
+   });
+   $(function () {
+     $('.popoverInfo').popover({
+       container: 'body'
+     })
+   })
 </script>
 {% endblock %}

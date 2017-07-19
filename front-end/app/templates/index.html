@@ -7,7 +7,7 @@
 
    <section style="display: flex; justify-content:center; align-items:center; height: 90vh; flex-direction:column;">
       <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" style="display:block; margin-bottom:40px; width:300px;" alt="">
-      <h1 style="text-transform: none">Sanger Aker Portal thing</h1>
+      <h1 style="text-transform: none">Sanger Aker Portal</h1>
       <form action="#" id="loginForm" style="width:30%; margin-top:50px;" onsubmit="return false">
         <p style="font-size:1.8rem;">Please log in using your details for any Aker product</p>
          <div class="form-group">
@@ -31,25 +31,8 @@
 
 {% block customScripts %}
 <script type="text/javascript">
-Cookies.set('test', {'1': {
-                           'name': 'Random Code herhe',
-                           'date': '24/01/1029',
-                           'status': 'Active',
-                           'code': 'usdiasdiuas'
-                          },
-                     '2': {
-                        'name': 'Another code here',
-                        'date': '24/21/1029',
-                        'status': 'Inactive',
-                        'code': 'asdhasdh'
-                       },
-                     '3': {
-                           'name': 'asdgagd isigas',
-                           'date': '4/21/1029',
-                           'status': 'Waiting',
-                           'code': 'ajhsagsdsg'
-                          },
-                     'studyCount': 3
+Cookies.set('test', {
+                     'studyCount': 0
                      });
 </script>
 {% endblock %}
