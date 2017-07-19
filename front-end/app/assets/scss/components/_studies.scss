@@ -6,7 +6,7 @@
    display: flex;
    
    h4{
-      flex: 2;
+      flex: 1;
    }
 }
 .studyInfo{
@@ -115,4 +115,10 @@
 .form-control{
    border: solid 1px #222 !important;
    padding-left: 1em !important; 
+}
+.checkboxHolder{
+   div{
+      display: inline-block;
+      width: 15%;
+   }
 }

@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Partial Templating</title>
+	<title>Study Screen</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="../assets/css/styles.css?v=1500473084985">
+<link rel="stylesheet" href="../assets/css/styles.css?v=1500487673423">
 
 	
 	
@@ -22,15 +22,33 @@
 		</div>
 
 		
-		
-		
+
+   <nav class="nav-primary">
+      <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" alt="">
+      <h1>Sanger Aker thing</h1>
+      <ul>
+         <li><a href="./account.html">Account</a></li>
+         <li><a href="./index.html">Logout</a></li>
+      </ul>
+   </nav>
+
+
 
 	</header>
 
 	<div class="main" id="main" role="main">
 		
+<div>
+   <button class="btn btn-lg btn-primary">Add Sample Data</button>
+   
+   <button class="btn btn-lg btn-primary" style="float:right; margin-left:20px;">Create Asset Group</button>
+   <button class="btn btn-lg btn-primary" style="float:right;">Create Work Order</button>
+   <div class="table_holder">
 
-   <div id="user" class="table_holder"></div>
+   </div>
+</div>
+   
+   
 
 	</div>
 
@@ -52,6 +70,75 @@
 
 
 
+
+<script type="text/javascript">
+   var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+   var letter;
+   var number;
+   var data = Cookies.getJSON('manifest');
+   console.log(data.donorId);
+   var table_build = '';
+   table_build += '<table class="table table-striped">';
+   table_build += '<thead>';
+         table_build += '<th>Plates used</th>';
+         table_build += '<th>Well</th>';
+         table_build += '<th>SampleID</th>';
+         table_build += '<th>Cohortid</th>';
+         table_build += '<th>Volume</th>';
+         table_build += '<th>Gender</th>';
+         table_build += '<th>Country of origin</th>';
+         table_build += '<th>Geographic Location</th>';
+         table_build += '<th>Ethnicity</th>';
+         table_build += '<th>DNA source</th>';
+         table_build += '<th>Sample Collection Date</th>';
+         table_build += '<th>DNA Extraction Date</th>';
+         table_build += '<th>Extraction Method</th>';
+         table_build += '<th>Purification Method</th>';
+         table_build += '<th>Concentration Determined By</th>';
+         table_build += '<th>GC Content</th>';
+         table_build += '<th>Public Name</th>';
+         table_build += '<th>Taxon ID</th>';
+         table_build += '<th>Common Name</th>';
+         table_build += '<th>Sample Desc</th>';
+         table_build += '<th>Strain</th>';
+         table_build += '<th>Sample Visibility</th>';
+         table_build += '<th>Accession Number</th>';
+   table_build += '</thead>';
+   table_build += '<tbody>';
+   for(var x = 0; x < data.sampleNumb; x++) {
+      letter = String(alphabet[Math.floor((Math.random() * 26))]).toUpperCase();
+      number = Math.floor(Math.random() * 97);
+      table_build += '<tr>';
+         table_build += '<td contenteditable>' + data.platesUsed[0] + '</td>';
+         table_build += '<td contenteditable>' + letter + number + '</td>';
+         table_build += '<td contenteditable>' + data.donorId + '</td>';
+         table_build += '<td contenteditable>' + data.cohortID + '</td>';
+         table_build += '<td contenteditable>' + data.gcContent + '</td>';
+         table_build += '<td contenteditable>' + data.gender + '</td>';
+         table_build += '<td contenteditable>' + data.coo + '</td>';
+         table_build += '<td contenteditable>' + data.geoloc + '</td>';
+         table_build += '<td contenteditable>' + data.ethnicity + '</td>';
+         table_build += '<td contenteditable>' + data.dnaSource + '</td>';
+         table_build += '<td contenteditable>' + data.sampleDate + '</td>';
+         table_build += '<td contenteditable>' + data.dnaExtractData + '</td>';
+         table_build += '<td contenteditable>' + data.extractMethod + '</td>';
+         table_build += '<td contenteditable>' + data.pureMethodChoice + '</td>';
+         table_build += '<td contenteditable>' + data.determinedBy + '</td>';
+         table_build += '<td contenteditable>' + data.gcContent + '</td>';
+         table_build += '<td contenteditable>' + data.publicName + '</td>';
+         table_build += '<td contenteditable>' + data.taxonId + '</td>';
+         table_build += '<td contenteditable>' + data.commonName + '</td>';
+         table_build += '<td contenteditable>' + data.sampleDesc + '</td>';
+         table_build += '<td contenteditable>' + data.strain + '</td>';
+         table_build += '<td contenteditable>' + data.sampleVis + '</td>';
+         table_build += '<td contenteditable>' + data.accNumb + '</td>';
+      table_build += '</tr>';
+   }
+   table_build += '</tbody>';
+   table_build += '</table>';
+
+   $('.table_holder').append(table_build);
+</script>
 
 
 </body>

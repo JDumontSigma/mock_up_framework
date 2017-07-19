@@ -20,11 +20,13 @@
    <section class="studiesContainer">
       <div class="col-sm-12" style="padding:2.5em 4em; box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.24); margin-top:60px;">
          <button class="btn btn-lg btn-primary" style="float:right" data-toggle="modal" data-target="#myModal">Add Study</button>
-      <section class="studies_heading" style="display:flex; width:100%; margin-top:60px;">
-        <h4 style="flex:3;">Project title</h4>
-        <h4 style="flex:1;text-align:center;">Start Date</h4>
-        <h4 style="flex:1;text-align:center;">Project Code</h4>
-        <h4 style="flex:1;text-align:center;">State</h4>
+      <section class="studies_heading" style="display:flex; width:100%; margin-top:60px; font-size:1rem;">
+        <h4 style="flex:2;font-size:1.5rem;">Project/Study</h4>
+        <h4 style="flex:0.5;text-align:center;font-size:1.5rem;">Study Id</h4>
+        <h4 style="flex:0.5;text-align:center;font-size:1.5rem;">Cost Code</h4>
+        <h4 style="flex:0.5;text-align:center;font-size:1.5rem;">Funding Type</h4>
+        <h4 style="flex:0.5;text-align:center;font-size:1.5rem;">RT Ticket</h4>
+        <h4 style="flex:0.5;text-align:center;font-size:1.5rem;">Status</h4>
       </section>
       <section class="studies" style="display:flex; width:100%; margin-top:20px;">
 
@@ -79,10 +81,13 @@ for(var test in tests) {
   if(test !== 'studyCount') {
    testDetails += '<a href="./study.html?id=' + test + '&name=' + tests[test].name + '&code=' + tests[test].code + '&date=' + tests[test].date + '&status=' + tests[test].status + '">';
             testDetails += '<section class="studyItem">';
-               testDetails += '<h4>' + tests[test].name + '</h4>'
+               testDetails += '<h4>' + tests[test].Project_Study + '</h4>';
+               testDetails += '<div class="manifest btn btn-large btn-info" id="' + test + '">Create Manifest</div>';
                testDetails += '<section class="studyInfo">';
-                  testDetails += '<div class="date">' + tests[test].date + '</div>';
-                  testDetails += '<div class="code">' + tests[test].code + '</div>';
+                  testDetails += '<div class="date">' + tests[test].Study_ID + '</div>';
+                  testDetails += '<div class="code">' + tests[test].Cost_Code + '</div>';
+                  testDetails += '<div class="code">' + tests[test].Funding_Type + '</div>';
+                  testDetails += '<div class="code">' + tests[test].RT_Ticket + '</div>';
                   switch(String(tests[test].status).toLowerCase()) {
                     case 'active' :
                       testDetails += '<div class="state btn btn-success btn-xs">' + tests[test].status + '</div>';
@@ -102,5 +107,9 @@ for(var test in tests) {
 }
 $('.studies').append(testDetails);
 
+$('body').on('click', '.manifest', function (event) {
+  event.preventDefault();
+  window.location = './manifest.html?id=' + $( this ).attr('id');
+});
 </script>
 {% endblock %}

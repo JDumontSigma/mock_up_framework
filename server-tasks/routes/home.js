@@ -18,6 +18,12 @@ home.get('/prelim.html', (req, res) => {
 home.get('./account.html', (req, res) => {
       res.render('account');
 });
+home.get('/manifest.html', (req, res) => {
+      res.render('manifest');
+});
+home.get('/table.html', (req, res) => {
+      res.render('table');
+})
 home.get('/study.html', (req, res) => {
       res.render('study');
 });

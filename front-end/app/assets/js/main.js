@@ -8,7 +8,7 @@ let detail = '',
 
 Table_Generator();
 
-$('.table_holder').append( detail );
+$('.table_holder2').append( detail );
 
 function Table_Generator () {
     let rowCount = 10,
