@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="../assets/css/styles.css?v=1500487673423">
+<link rel="stylesheet" href="../assets/css/styles.css?v=1500492171020">
 
 	
 	
@@ -25,7 +25,7 @@
 
    <nav class="nav-primary">
       <img src="http://www.sanger.ac.uk/sites/all/themes/zangerfront/images/wtsi_logo.png" alt="">
-      <h1>Sanger Aker thing</h1>
+      <h1>Sanger Aker</h1>
       <ul>
          <li><a href="./account.html">Account</a></li>
          <li><a href="./index.html">Logout</a></li>
@@ -39,8 +39,7 @@
 	<div class="main" id="main" role="main">
 		
 <div class="container">
-   <h3 class="name" style="text-transform: capitalize;"></h3>
-    <p style="font-size:1.8rem; margin-top:20px;">Please find the latest test below. You are able to create new test, edit previous tests from this page</p>
+   <h3 class="name" style=""></h3>
    <section class="studiesContainer">
       <div class="col-sm-12" style="padding:2.5em 4em; box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.24); margin-top:60px;">
          <button class="btn btn-lg btn-primary" style="float:right" data-toggle="modal" data-target="#myModal">Add Study</button>
@@ -75,9 +74,9 @@
           <h4 class="modal-title">Create a new study</h4>
         </div>
         <div class="modal-body">
-          <p>To make a new study please choose whether to import the data or create a new study all together</p>
-          <a href="./prelim.html?phase=import"class="btn btn-lg btn-default">Import Data from File</a>
-          <a href="./prelim.html?phase=new" class="btn btn-lg btn-primary">Manual Enter</a>
+          <p>If you already have prelim data in eCap or another source, export a CSV file first, and then select the import option below.</p>
+          <a href="./prelim.html?phase=import"class="btn btn-lg btn-default">Import prelim data</a>
+          <a href="./prelim.html?phase=new" class="btn btn-lg btn-primary">Use blank template</a>
         </div>
       </div>
       
@@ -106,7 +105,7 @@
 
 <script type="text/javascript">
 var name = Cookies.get('username');
-$('.name').html('Welcome Back ' + name);
+$('.name').html('Welcome back ' + name);
 </script>
 
 <script type="text/javascript">
